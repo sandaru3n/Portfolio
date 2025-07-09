@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -162,16 +166,10 @@ body {
 .section {
   min-height: calc(100vh - 70px);
   padding: 2rem;
-  display: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all var(--transition-slow);
-}
-
-.section.active {
   display: block;
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  transition: none;
 }
 
 /* Hero Section */

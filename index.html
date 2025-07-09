@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandaru Peiris - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <!-- Animated Background -->
+  <div id="background-particles"></div>
+
+  <!-- Navigation Menu -->
+  <nav class="nav-menu">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-name">SP</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" data-section="hero-section">Home</a></li>
+      <li><a href="#about" data-section="about-section">About</a></li>
+      <li><a href="#projects" data-section="projects-section">Projects</a></li>
+      <li><a href="#skills" data-section="skills-section">Skills</a></li>
+      <li><a href="#contact" data-section="contact-section">Contact</a></li>
+    </ul>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div id="root" class="main-container">
+    <!-- Hero Section with Typing Effect -->
+    <section id="hero-section" class="section active hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="greeting">Hello, I'm</span>
+            <span class="name">Sandaru Peiris</span>
+            <span class="typing-container">
+              <span class="typing-text" id="typing-text"></span>
+              <span class="cursor-blink">|</span>
+            </span>
+          </h1>
+          <p class="hero-description">
+            3rd-year Information Technology student at SLIIT passionate about creating innovative web solutions
+          </p>
+          <div class="hero-buttons">
+            <button class="btn-primary" data-section="about-section">
+              <i class="fas fa-user"></i>
+              About Me
+            </button>
+            <button class="btn-secondary" data-section="projects-section">
+              <i class="fas fa-code"></i>
+              View Projects
+            </button>
+            <button class="btn-accent" data-section="contact-section">
+              <i class="fas fa-envelope"></i>
+              Get In Touch
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="code-preview">
+            <div class="code-header">
+              <div class="code-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <div class="code-title">portfolio.js</div>
+            </div>
+            <div class="code-content">
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <span class="code-text">
+                  <span class="keyword">const</span>
+                  <span class="variable">developer</span> = {
+                </span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <span class="code-text">
+                  &nbsp;&nbsp;<span class="property">name</span>:
+                  <span class="string">"Sandaru Peiris"</span>,
+                </span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <span class="code-text">
+                  &nbsp;&nbsp;<span class="property">role</span>:
+                  <span class="string">"Full Stack Developer"</span>,
+                </span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <span class="code-text">
+                  &nbsp;&nbsp;<span class="property">university</span>:
+                  <span class="string">"SLIIT"</span>,
+                </span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <span class="code-text">
+                  &nbsp;&nbsp;<span class="property">skills</span>: [
+                  <span class="string">"React"</span>,
+                  <span class="string">"Node.js"</span>]
+                </span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">6</span>
+                <span class="code-text">};</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section id="about-section" class="section content-section">
+      <div class="content-container">
+        <h2 class="section-title"># About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Hello, I'm Sandaru Peiris</h3>
+            <p>I'm a passionate 3rd-year undergraduate student at Sri Lanka Institute of Information Technology (SLIIT), pursuing my degree in Information Technology. I love creating innovative solutions and exploring new technologies.</p>
+            <div class="education">
+              <h4>Education</h4>
+              <div class="education-item">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                  <strong>Bachelor of Information Technology</strong>
+                  <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+                  <span class="year">2022 - 2026 (Expected)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <div class="profile-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects-section" class="section content-section">
+      <div class="content-container">
+        <h2 class="section-title"># Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Portfolio Website</h3>
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <p class="project-description">An interactive portfolio website with a typing interface, featuring animations and responsive design.</p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Student Management System</h3>
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <p class="project-description">A comprehensive system for managing student records, grades, and academic information with a modern web interface.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Express</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>E-Commerce Platform</h3>
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <p class="project-description">A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Stripe</span>
+              <span class="tech-tag">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills-section" class="section content-section">
+      <div class="content-container">
+        <h2 class="section-title"># Skills</h2>
+        <div class="skills-container">
+          <div class="skills-category">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+                <div class="skill-level">
+                  <div class="skill-progress" data-level="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+                <div class="skill-level">
+                  <div class="skill-progress" data-level="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-node-js"></i>
+                <span>Node.js</span>
+                <div class="skill-level">
+                  <div class="skill-progress" data-level="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+                <div class="skill-level">
+                  <div class="skill-progress" data-level="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-java"></i>
+                <span>Java</span>
+                <div class="skill-level">
+                  <div class="skill-progress" data-level="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <span>MongoDB</span>
+                <div class="skill-level">
+                  <div class="skill-progress" data-level="70"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-category">
+            <h3>Soft Skills</h3>
+            <div class="soft-skills">
+              <div class="soft-skill">
+                <i class="fas fa-users"></i>
+                <span>Team Collaboration</span>
+              </div>
+              <div class="soft-skill">
+                <i class="fas fa-lightbulb"></i>
+                <span>Problem Solving</span>
+              </div>
+              <div class="soft-skill">
+                <i class="fas fa-comments"></i>
+                <span>Communication</span>
+              </div>
+              <div class="soft-skill">
+                <i class="fas fa-clock"></i>
+                <span>Time Management</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-section" class="section content-section">
+      <div class="content-container">
+        <h2 class="section-title"># Contact</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <p>I'm always open to discussing new opportunities, collaborations, or just having a friendly chat about technology!</p>
+
+            <div class="contact-links">
+              <a href="mailto:sandaru.peiris@example.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                <span>sandaru.peiris@example.com</span>
+              </a>
+              <a href="https://github.com/sandaru-peiris" class="contact-link" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/sandaru-peiris" class="contact-link" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://twitter.com/sandaru_peiris" class="contact-link" target="_blank">
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send a Message</h3>
+            <form id="contact-form">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script crossorigin="anonymous" src="//unpkg.com/same-runtime/dist/index.global.js"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

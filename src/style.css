@@ -992,37 +992,75 @@ body {
 
 /* Creative Download CV Button */
 .btn-cv {
-  background: linear-gradient(90deg, var(--accent-neon), var(--accent-blue), var(--accent-pink));
-  background-size: 200% 200%;
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  /* Remove background, border, glow, and glassmorphism for btn-cv, as btn-secondary will handle the button style */
+  background: none;
   border: none;
-  border-radius: 30px;
-  padding: 0.75rem 2.2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  box-shadow: 0 4px 24px 0 rgba(0,255,136,0.15), 0 1.5px 6px 0 rgba(0,212,255,0.10);
+  box-shadow: none;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
   cursor: pointer;
-  margin-left: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s, background-position 0.8s;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   z-index: 1;
-  animation: btn-cv-fadein 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: none;
+  animation: none;
 }
 
-.btn-cv i {
+.btn-cv .cv-icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-neon) 60%, var(--accent-blue) 100%);
+  box-shadow: 0 0 10px 0 var(--accent-neon), 0 0 4px 0 var(--accent-blue);
+  animation: cv-icon-pulse 1.3s infinite alternate;
   margin-right: 0.7em;
+  transition: box-shadow 0.2s, background 0.3s;
 }
 
-.btn-cv:hover {
-  background-position: right center;
-  transform: translateY(-3px) scale(1.05) rotate(-1deg);
-  box-shadow: 0 8px 32px 0 rgba(0,255,136,0.25), 0 3px 12px 0 rgba(0,212,255,0.18);
+.btn-cv:hover .cv-icon-bg {
+  box-shadow: 0 0 18px 4px var(--accent-pink), 0 0 8px 0 var(--accent-blue);
+  background: linear-gradient(135deg, var(--accent-pink) 60%, var(--accent-blue) 100%);
 }
 
-@keyframes btn-cv-fadein {
-  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+.btn-cv img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px var(--accent-neon));
+  margin: 0;
+}
+
+@keyframes cv-icon-pulse {
+  0% {
+    box-shadow: 0 0 6px 0 var(--accent-neon), 0 0 4px 0 var(--accent-blue);
+  }
+  100% {
+    box-shadow: 0 0 18px 4px var(--accent-pink), 0 0 8px 0 var(--accent-blue);
+  }
+}
+
+@media (max-width: 600px) {
+  .btn-cv .cv-icon-bg {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    min-height: 26px;
+    margin-right: 0.5em;
+  }
+  .btn-cv img {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 /* Hero Section Entrance Animation */
@@ -1118,4 +1156,40 @@ body {
 
 .about-cv-download .btn-cv {
   margin-left: 0;
+}
+
+.btn-secondary.btn-cv {
+  border: 2.5px solid var(--accent-neon) !important;
+  box-shadow: 0 0 8px 0 var(--accent-neon, #00ff88);
+  position: relative;
+  z-index: 1;
+  background-clip: padding-box;
+}
+
+.btn-secondary.btn-cv:hover, .btn-secondary.btn-cv:focus {
+  box-shadow: 0 0 18px 2px var(--accent-neon, #00ff88), 0 0 8px 0 var(--accent-blue, #00d4ff);
+  border-color: var(--accent-neon);
+}
+
+.download-cv-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 16px rgba(221,36,118,0.15);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+.download-cv-btn:hover, .download-cv-btn:focus {
+  background: linear-gradient(90deg, #dd2476 0%, #ff512f 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(221,36,118,0.25);
+  text-decoration: none;
+  outline: none;
 }

@@ -1193,3 +1193,81 @@ body {
   text-decoration: none;
   outline: none;
 }
+
+.skill-item.js-skill i {
+  color: #f7df1e; /* JS yellow */
+}
+
+.skill-item.js-skill .skill-progress {
+  background: #f7df1e;
+}
+
+.skill-item.mongodb-skill i {
+  color: #00ec7a; /* MongoDB brand green */
+}
+
+.skill-item.mongodb-skill .skill-progress {
+  background: #00ec7a;
+}
+
+.skill-item.react-skill i {
+  color: #61dafb; /* React brand light blue */
+}
+
+.skill-item.react-skill .skill-progress {
+  background: #61dafb;
+}
+
+.skill-item.python-skill i {
+  color: #097cdb; /* Python dark blue */
+}
+
+.skill-item.python-skill .skill-progress {
+  background: #097cdb;
+}
+
+.skill-item.java-skill i {
+  color: #e51f20; /* Java red */
+}
+
+.skill-item.java-skill .skill-progress {
+  background: #e51f20;
+}
+
+.skill-item.nodejs-skill i {
+  color: #49cb35; /* Node.js dark green */
+}
+
+.skill-item.nodejs-skill .skill-progress {
+  background: #49cb35;
+}
+
+.skill-item.js-skill:hover {
+  border-color: #f7df1e;
+  box-shadow: 0 5px 20px rgba(247, 223, 30, 0.2);
+}
+
+.skill-item.react-skill:hover {
+  border-color: #61dafb;
+  box-shadow: 0 5px 20px rgba(97, 218, 251, 0.2);
+}
+
+.skill-item.mongodb-skill:hover {
+  border-color: #00ec7a;
+  box-shadow: 0 5px 20px rgba(0, 236, 122, 0.2);
+}
+
+.skill-item.python-skill:hover {
+  border-color: #097cdb;
+  box-shadow: 0 5px 20px rgba(9, 124, 219, 0.2);
+}
+
+.skill-item.java-skill:hover {
+  border-color: #e51f20;
+  box-shadow: 0 5px 20px rgba(229, 31, 32, 0.2);
+}
+
+.skill-item.nodejs-skill:hover {
+  border-color: #49cb35;
+  box-shadow: 0 5px 20px rgba(73, 203, 53, 0.2);
+}

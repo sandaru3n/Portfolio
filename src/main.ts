@@ -215,9 +215,14 @@ class Portfolio {
           for (const bar of skillBars) {
             const level = (bar as HTMLElement).getAttribute('data-level');
             if (level) {
+              (bar as HTMLElement).style.transition = 'none';
+              (bar as HTMLElement).style.width = '0';
+              // Force reflow to apply the width reset before animating
+              void (bar as HTMLElement).offsetWidth;
+              (bar as HTMLElement).style.transition = 'width 2s cubic-bezier(0.23, 1, 0.32, 1)';
               setTimeout(() => {
                 (bar as HTMLElement).style.width = `${level}%`;
-              }, 500);
+              }, 100);
             }
           }
         }

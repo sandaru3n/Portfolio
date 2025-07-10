@@ -989,3 +989,133 @@ body {
   margin-right: auto;
   border-radius: 50%; /* Optional: makes it circular */
 }
+
+/* Creative Download CV Button */
+.btn-cv {
+  background: linear-gradient(90deg, var(--accent-neon), var(--accent-blue), var(--accent-pink));
+  background-size: 200% 200%;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 24px 0 rgba(0,255,136,0.15), 0 1.5px 6px 0 rgba(0,212,255,0.10);
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s, background-position 0.8s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  animation: btn-cv-fadein 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-cv i {
+  margin-right: 0.7em;
+}
+
+.btn-cv:hover {
+  background-position: right center;
+  transform: translateY(-3px) scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 32px 0 rgba(0,255,136,0.25), 0 3px 12px 0 rgba(0,212,255,0.18);
+}
+
+@keyframes btn-cv-fadein {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Hero Section Entrance Animation */
+.hero {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: hero-fadein 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.2s forwards;
+}
+
+@keyframes hero-fadein {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Profile Photo Download CV Overlay */
+.profile-placeholder {
+  position: relative;
+}
+
+.profile-cv-overlay {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.profile-cv-overlay a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-neon), var(--accent-blue), var(--accent-pink));
+  color: #fff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 16px 0 rgba(0,255,136,0.18);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s, background-position 0.8s;
+  position: relative;
+  overflow: visible;
+}
+
+.profile-cv-overlay a:hover {
+  transform: scale(1.12) rotate(-8deg);
+  box-shadow: 0 8px 32px 0 rgba(0,255,136,0.28);
+  background-position: right center;
+}
+
+.profile-cv-overlay i {
+  animation: bounce-cv 1.6s infinite alternate cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes bounce-cv {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px) scale(1.12); }
+}
+
+.cv-tooltip {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 110%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  background: rgba(10,10,15,0.95);
+  color: #fff;
+  padding: 0.4em 1em;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 10;
+}
+
+.profile-cv-overlay a:hover .cv-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.about-cv-download {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1.2rem 0 1.8rem 0;
+  animation: btn-cv-fadein 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.about-cv-download .btn-cv {
+  margin-left: 0;
+}

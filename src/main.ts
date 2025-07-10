@@ -255,14 +255,30 @@ class Portfolio {
   }
 
   private setupContactForm(): void {
-    const contactForm = document.querySelector('form[action="https://formspree.io/f/xgvygkea"]') as HTMLFormElement;
-    if (contactForm) {
-      contactForm.addEventListener('submit', () => {
-        this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-        // The page will reload after submission, so the message will show briefly
-      });
-    }
+  const contactForm = document.querySelector('form[action="https://formspree.io/f/xgvygkea"]') as HTMLFormElement;
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        const response = await fetch('https://formspree.io/f/xgvygkea', {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        if (response.ok) {
+          this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+          contactForm.reset();
+        } else {
+          this.showNotification('Failed to send message. Please try again.', 'error');
+        }
+      } catch (error) {
+        this.showNotification('An error occurred. Please try again.', 'error');
+      }
+    });
   }
+}
 
   private setupScrollIndicator(): void {
     const scrollIndicator = document.querySelector('.scroll-indicator');

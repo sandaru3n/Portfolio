@@ -979,3 +979,13 @@ body {
     font-size: 0.8rem;
   }
 }
+
+/* Responsive profile photo */
+.profile-photo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%; /* Optional: makes it circular */
+}

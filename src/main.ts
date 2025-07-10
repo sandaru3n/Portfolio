@@ -80,7 +80,7 @@ class Portfolio {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         navLinks?.classList.remove('active');
-      } else if (e.key === 'ArrowDown' || e.key === ' ') {
+      } else if (e.key === 'ArrowDown') {
         e.preventDefault();
         this.scrollToNextSection();
       } else if (e.key === 'ArrowUp') {
@@ -255,21 +255,12 @@ class Portfolio {
   }
 
   private setupContactForm(): void {
-    const contactForm = document.getElementById('contact-form') as HTMLFormElement;
+    const contactForm = document.querySelector('form[action="https://formspree.io/f/xgvygkea"]') as HTMLFormElement;
     if (contactForm) {
       contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Get form data (for potential future use)
-        // const name = (document.getElementById('name') as HTMLInputElement).value;
-        // const email = (document.getElementById('email') as HTMLInputElement).value;
-        // const message = (document.getElementById('message') as HTMLTextAreaElement).value;
-
-        // Simulate form submission
+        // Do not prevent default, so Formspree works
         this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-
-        // Reset form
-        contactForm.reset();
+        // The page will reload after submission, so the message will show briefly
       });
     }
   }

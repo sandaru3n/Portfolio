@@ -239,9 +239,8 @@ class Portfolio {
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     for (const anchor of anchorLinks) {
-      anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = (e.target as HTMLAnchorElement).getAttribute('href');
+      anchor.addEventListener('click', () => {
+        const href = (anchor as HTMLAnchorElement).getAttribute('href');
         if (href) {
           const target = document.querySelector(href);
           if (target) {

@@ -257,8 +257,7 @@ class Portfolio {
   private setupContactForm(): void {
     const contactForm = document.querySelector('form[action="https://formspree.io/f/xgvygkea"]') as HTMLFormElement;
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        // Do not prevent default, so Formspree works
+      contactForm.addEventListener('submit', () => {
         this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
         // The page will reload after submission, so the message will show briefly
       });

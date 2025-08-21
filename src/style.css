@@ -1194,6 +1194,18 @@ body {
   outline: none;
 }
 
+.download-cv-btn .btn-loading {
+  display: none;
+}
+
+.download-cv-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.download-cv-btn i {
+  margin-right: 8px;
+}
+
 .skill-item.js-skill i {
   color: #f7df1e; /* JS yellow */
 }

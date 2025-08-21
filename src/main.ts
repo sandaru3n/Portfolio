@@ -467,6 +467,83 @@ class Particle {
   }
 }
 
+// Download CV functionality
+(window as any).downloadCV = function(event: Event) {
+  event.preventDefault();
+  
+  const button = event.target as HTMLElement;
+  const btnText = button.querySelector('.btn-text') as HTMLElement;
+  const btnLoading = button.querySelector('.btn-loading') as HTMLElement;
+  
+  // Show loading state
+  if (btnText && btnLoading) {
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+  }
+  
+  // Use the original external URL from your CV
+  const cvUrl = 'https://triptrait.com/sandaru-peiris.pdf';
+  
+  // Create a temporary link element
+  const link = document.createElement('a');
+  link.href = cvUrl;
+  link.download = 'Sandaru_Peiris_CV.pdf';
+  link.target = '_blank';
+  
+  // Add to DOM, click, and remove
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  // Reset button state after a short delay
+  setTimeout(() => {
+    if (btnText && btnLoading) {
+      btnText.style.display = 'inline';
+      btnLoading.style.display = 'none';
+    }
+    showNotification('CV download started!', 'success');
+  }, 1000);
+};
+
+// Notification function
+function showNotification(message: string, type: 'success' | 'error' = 'success') {
+  const notification = document.createElement('div');
+  notification.className = `notification notification-${type}`;
+  notification.textContent = message;
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: ${type === 'success' ? '#10b981' : '#ef4444'};
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Animate in
+  setTimeout(() => {
+    notification.style.transform = 'translateX(0)';
+  }, 100);
+  
+  // Remove after 3 seconds
+  setTimeout(() => {
+    notification.style.transform = 'translateX(100%)';
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.parentNode.removeChild(notification);
+      }
+    }, 300);
+  }, 3000);
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
   new Portfolio();

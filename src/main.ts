@@ -481,8 +481,8 @@ class Particle {
     btnLoading.style.display = 'inline';
   }
   
-  // Use the original external URL from your CV
-  const cvUrl = 'https://triptrait.com/sandaru-peiris.pdf';
+  // Use Google Drive direct download URL for CV
+  const cvUrl = 'https://drive.google.com/uc?export=download&id=1tpiFMv1o7QE0GLhMUucnOIauobpitfKU';
   
   // Create a temporary link element
   const link = document.createElement('a');
